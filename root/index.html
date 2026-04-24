@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yogesh Raju Patil — Senior Software Engineer</title>
+  <meta name="description" content="Senior Software Engineer with 7+ years building enterprise APIs. Python · FastAPI · PostgreSQL · Azure.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Lime scroll progress line at top -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Section progress dots — right edge -->
+  <nav class="section-dots" id="sectionDots" aria-label="Page sections">
+    <a href="#hero"         class="sdot active" data-label="Intro"></a>
+    <a href="#about"        class="sdot" data-label="About"></a>
+    <a href="#skills"       class="sdot" data-label="Skills"></a>
+    <a href="#experience"   class="sdot" data-label="Experience"></a>
+    <a href="#achievements" class="sdot" data-label="Impact"></a>
+    <a href="#contact"      class="sdot" data-label="Contact"></a>
+  </nav>
+
+  <!-- ======================================================== NAV -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo"><span class="bracket">[</span>YRP<span class="bracket">]</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="#about"        class="nav-link"><span>About</span><span>About</span></a>
+        <a href="#skills"       class="nav-link"><span>Skills</span><span>Skills</span></a>
+        <a href="#experience"   class="nav-link"><span>Experience</span><span>Experience</span></a>
+        <a href="#achievements" class="nav-link"><span>Impact</span><span>Impact</span></a>
+        <a href="#contact"      class="nav-cta">Hire Me</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ======================================================== HERO -->
+  <section id="hero">
+    <!-- Flow-field canvas — organic particle streams -->
+    <canvas id="flowCanvas"></canvas>
+    <!-- Subtle film-grain texture -->
+    <div class="hero-noise"></div>
+
+    <!-- Floating SVG decorative shapes — organic, hand-crafted feel -->
+    <div class="hero-deco" aria-hidden="true">
+      <svg class="deco deco-plus" viewBox="0 0 40 40" width="36" height="36">
+        <line x1="20" y1="5" x2="20" y2="35" stroke="#C8FF41" stroke-width="1.8" stroke-linecap="round"/>
+        <line x1="5" y1="20" x2="35" y2="20" stroke="#C8FF41" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+      <svg class="deco deco-circle" viewBox="0 0 44 44" width="40" height="40">
+        <circle cx="22" cy="22" r="18" fill="none" stroke="#C8FF41" stroke-width="1.5" stroke-dasharray="5 4"/>
+      </svg>
+      <svg class="deco deco-diamond" viewBox="0 0 36 36" width="32" height="32">
+        <path d="M18 3 L33 18 L18 33 L3 18 Z" fill="none" stroke="#C8FF41" stroke-width="1.5" stroke-linejoin="round"/>
+      </svg>
+      <svg class="deco deco-dots" viewBox="0 0 22 22" width="18" height="18">
+        <circle cx="5" cy="5" r="2.2" fill="#C8FF41"/>
+        <circle cx="17" cy="5" r="2.2" fill="#C8FF41"/>
+        <circle cx="5" cy="17" r="2.2" fill="#C8FF41"/>
+        <circle cx="17" cy="17" r="2.2" fill="#C8FF41"/>
+      </svg>
+      <svg class="deco deco-wave" viewBox="0 0 80 22" width="68" height="20">
+        <path d="M2,11 Q12,2 22,11 Q32,20 42,11 Q52,2 62,11 Q72,20 78,11" fill="none" stroke="#C8FF41" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+      <svg class="deco deco-star" viewBox="0 0 32 32" width="28" height="28">
+        <line x1="16" y1="2"  x2="16" y2="30" stroke="#C8FF41" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="2"  y1="16" x2="30" y2="16" stroke="#C8FF41" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="5"  y1="5"  x2="27" y2="27" stroke="#C8FF41" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="27" y1="5"  x2="5"  y2="27" stroke="#C8FF41" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-pulse"></span>Available for senior roles
+      </div>
+
+      <!-- Asymmetric hero name: first name big/left, surname smaller/right -->
+      <h1 class="hero-name">
+        <span class="hn-1">Yogesh</span>
+        <span class="hn-2">Raju <em class="squiggle-wrap">Patil<svg class="squiggle-svg" viewBox="0 0 260 16" preserveAspectRatio="none" aria-hidden="true"><path class="squiggle-path" d="M2,8 C24,2 42,14 65,8 C88,2 105,14 128,8 C151,2 168,14 191,8 C212,4 232,12 258,8" fill="none" stroke="#C8FF41" stroke-width="2.5" stroke-linecap="round"/></svg></em></span>
+      </h1>
+
+      <div class="hero-meta">
+        <div class="hero-role">
+          <span class="mono">Senior&nbsp;</span>
+          <span id="typeTarget" class="mono"></span>
+          <span class="type-cursor mono">_</span>
+        </div>
+        <div class="hero-divider"></div>
+        <div class="hero-loc mono">Hyderabad · India · 7+ yrs</div>
+      </div>
+
+      <div class="hero-actions">
+        <a href="#experience" class="btn-lime magnetic">View Work &thinsp;→</a>
+        <a href="mailto:meyogeshpatil4598@gmail.com" class="btn-outline magnetic">Get In Touch</a>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <div class="scroll-line-wrap"><div class="scroll-line-inner"></div></div>
+      <span class="mono">scroll</span>
+    </div>
+  </section>
+
+  <!-- ======================================================== TICKER -->
+  <div class="ticker-band" aria-hidden="true">
+    <div class="ticker-track" id="tickerTrack">
+      <span>Python</span><span class="td">·</span>
+      <span>FastAPI</span><span class="td">·</span>
+      <span>PostgreSQL</span><span class="td">·</span>
+      <span>asyncpg</span><span class="td">·</span>
+      <span>Azure</span><span class="td">·</span>
+      <span>Docker</span><span class="td">·</span>
+      <span>Django / DRF</span><span class="td">·</span>
+      <span>Flask</span><span class="td">·</span>
+      <span>SQLAlchemy</span><span class="td">·</span>
+      <span>Pytest</span><span class="td">·</span>
+      <span>REST APIs</span><span class="td">·</span>
+      <span>Microservices</span><span class="td">·</span>
+      <span>Async &amp; Concurrency</span><span class="td">·</span>
+      <span>Python</span><span class="td">·</span>
+      <span>FastAPI</span><span class="td">·</span>
+      <span>PostgreSQL</span><span class="td">·</span>
+      <span>asyncpg</span><span class="td">·</span>
+      <span>Azure</span><span class="td">·</span>
+      <span>Docker</span><span class="td">·</span>
+      <span>Django / DRF</span><span class="td">·</span>
+      <span>Flask</span><span class="td">·</span>
+      <span>SQLAlchemy</span><span class="td">·</span>
+      <span>Pytest</span><span class="td">·</span>
+      <span>REST APIs</span><span class="td">·</span>
+      <span>Microservices</span><span class="td">·</span>
+      <span>Async &amp; Concurrency</span><span class="td">·</span>
+    </div>
+  </div>
+
+  <!-- ======================================================== STATS -->
+  <div class="stats-band">
+    <div class="container stats-inner">
+      <div class="stat-item">
+        <div class="stat-value"><span class="counter" data-to="7">0</span><span class="stat-sfx">+</span></div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-sep"></div>
+      <div class="stat-item">
+        <div class="stat-value"><span class="counter" data-to="3">0</span></div>
+        <div class="stat-label">Companies</div>
+      </div>
+      <div class="stat-sep"></div>
+      <div class="stat-item">
+        <div class="stat-value"><span class="counter" data-to="500">0</span><span class="stat-sfx">MB</span></div>
+        <div class="stat-label">Max Upload Handled</div>
+      </div>
+      <div class="stat-sep"></div>
+      <div class="stat-item">
+        <div class="stat-value"><span class="counter" data-to="80">0</span><span class="stat-sfx">%</span></div>
+        <div class="stat-label">Upload Time Reduced</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================== ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-label">01 / About</div>
+      <div class="about-grid">
+
+        <div class="about-code" data-reveal="left">
+          <div class="code-window">
+            <div class="code-titlebar">
+              <div class="code-dots">
+                <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+              </div>
+              <span class="code-filename">engineer.py</span>
+            </div>
+            <pre class="code-body"><span class="kw">class</span> <span class="cl">Yogesh</span>(<span class="cl">SeniorEngineer</span>):
+
+    experience  = <span class="nm">7</span>   <span class="cm"># years</span>
+    location    = <span class="st">"Hyderabad, IN"</span>
+    status      = <span class="st">"Available"</span>
+
+    specialties = [
+        <span class="st">"FastAPI"</span>,
+        <span class="st">"Async PostgreSQL"</span>,
+        <span class="st">"API Architecture"</span>,
+        <span class="st">"Azure Cloud"</span>,
+    ]
+
+    <span class="kw">def</span> <span class="fn">approach</span>(self, problem):
+        plan = self.<span class="fn">analyze</span>(problem)
+        code = self.<span class="fn">architect</span>(plan)
+        <span class="kw">return</span> self.<span class="fn">optimize</span>(code)</pre>
+          </div>
+        </div>
+
+        <div class="about-text" data-reveal="right">
+          <h2 class="section-heading">
+            Turning Complex<br>
+            <span class="lime">Systems Into<br>Solutions</span>
+          </h2>
+          <p class="about-p">I'm a Senior Software Engineer specializing in high-performance backend systems and API architecture. My work lives at the intersection of <strong>performance engineering</strong>, <strong>async programming</strong>, and <strong>cloud-native design</strong>.</p>
+          <p class="about-p">At <strong>Excelra / GSK</strong>, I took ownership of under-performing regulatory APIs serving global users — separated monolithic endpoints, migrated to asyncpg with connection pooling, and engineered 500&nbsp;MB file uploads that previously timed out.</p>
+          <div class="about-pills">
+            <span class="pill">API Architect</span>
+            <span class="pill">Performance Engineer</span>
+            <span class="pill">Async Expert</span>
+            <span class="pill">Problem Solver</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================== SKILLS -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <div class="section-label">02 / Skills &mdash; hover each row</div>
+      <div class="skills-list">
+
+        <div class="sr" data-reveal>
+          <div class="sr-main"><span class="sr-idx">01</span><span class="sr-name">Python</span></div>
+          <div class="sr-alt"> <span class="sr-idx">01</span><span class="sr-reveal">7+ Years &nbsp;·&nbsp; Primary Language</span></div>
+          <span class="sr-cat">Language</span>
+        </div>
+        <div class="sr" data-reveal>
+          <div class="sr-main"><span class="sr-idx">02</span><span class="sr-name">FastAPI</span></div>
+          <div class="sr-alt"> <span class="sr-idx">02</span><span class="sr-reveal">Async APIs &nbsp;·&nbsp; Production Scale</span></div>
+          <span class="sr-cat">Backend</span>
+        </div>
+        <div class="sr" data-reveal>
+          <div class="sr-main"><span class="sr-idx">03</span><span class="sr-name">PostgreSQL</span></div>
+          <div class="sr-alt"> <span class="sr-idx">03</span><span class="sr-reveal">asyncpg &nbsp;·&nbsp; Connection Pooling</span></div>
+          <span class="sr-cat">Database</span>
+        </div>
+        <div class="sr" data-reveal>
+          <div class="sr-main"><span class="sr-idx">04</span><span class="sr-name">Azure</span></div>
+          <div class="sr-alt"> <span class="sr-idx">04</span><span class="sr-reveal">Blob &nbsp;·&nbsp; Functions &nbsp;·&nbsp; Logic Apps</span></div>
+          <span class="sr-cat">Cloud</span>
+        </div>
+        <div class="sr" data-reveal>
+          <div class="sr-main"><span class="sr-idx">05</span><span class="sr-name">Django / DRF</span></div>
+          <div class="sr-alt"> <span class="sr-idx">05</span><span class="sr-reveal">REST APIs &nbsp;·&nbsp; ORM &nbsp;·&nbsp; Auth</span></div>
+          <span class="sr-cat">Backend</span>
+        </div>
+        <div class="sr" data-reveal>
+          <div class="sr-main"><span class="sr-idx">06</span><span class="sr-name">Microservices</span></div>
+          <div class="sr-alt"> <span class="sr-idx">06</span><span class="sr-reveal">Architecture &nbsp;·&nbsp; Async &nbsp;·&nbsp; Scalable</span></div>
+          <span class="sr-cat">Architecture</span>
+        </div>
+        <div class="sr" data-reveal>
+          <div class="sr-main"><span class="sr-idx">07</span><span class="sr-name">Docker &amp; Git</span></div>
+          <div class="sr-alt"> <span class="sr-idx">07</span><span class="sr-reveal">CI/CD &nbsp;·&nbsp; Containers &nbsp;·&nbsp; DevOps</span></div>
+          <span class="sr-cat">DevOps</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================== EXPERIENCE -->
+  <section id="experience" class="section">
+    <div class="container">
+      <div class="section-label">03 / Experience</div>
+      <h2 class="section-heading">Work <span class="lime">History</span></h2>
+      <div class="timeline">
+
+        <div class="tl-item" data-reveal>
+          <div class="tl-connector"><div class="tl-node active"></div><div class="tl-line"></div></div>
+          <div class="tl-card tilt-card">
+            <div class="tl-header">
+              <div>
+                <span class="tl-period current">Apr 2025 — Present</span>
+                <h3 class="tl-role">Senior Software Engineer</h3>
+                <p class="tl-company">Excelra Knowledge Solutions &nbsp;·&nbsp; <em>Client: GSK</em></p>
+              </div>
+              <div class="tl-location">Hyderabad · WFH</div>
+            </div>
+            <div class="tl-project">HAQ Delta Documents &amp; Auto Draft Chat APIs</div>
+            <ul class="tl-points">
+              <li>Redesigned monolithic payload architecture — separated file upload APIs (100&nbsp;MB+) from Q&amp;A processing, resolving critical latency and memory issues for global users</li>
+              <li>Replaced 500+ record full loads with <strong>paginated lazy loading</strong> (5 at a time), dramatically improving UI responsiveness</li>
+              <li>Migrated DB layer from psycopg2 to <strong>asyncpg with connection pooling</strong>, improving concurrency and cutting DB latency</li>
+              <li>Engineered stable simultaneous 500&nbsp;MB uploads — reduced upload time from 150–250&nbsp;s</li>
+              <li>Built dynamic feedback &amp; AI evaluation APIs with DB-driven question loading and persisted responses</li>
+            </ul>
+            <div class="tl-stack"><span>Python</span><span>FastAPI</span><span>PostgreSQL</span><span>asyncpg</span><span>Azure Blob</span></div>
+          </div>
+        </div>
+
+        <div class="tl-item" data-reveal>
+          <div class="tl-connector"><div class="tl-node"></div><div class="tl-line"></div></div>
+          <div class="tl-card tilt-card">
+            <div class="tl-header">
+              <div>
+                <span class="tl-period">Jan 2022 — Apr 2025</span>
+                <h3 class="tl-role">Senior Software Development Engineer</h3>
+                <p class="tl-company">Brillio</p>
+              </div>
+              <div class="tl-location">Pune, India</div>
+            </div>
+            <ul class="tl-points">
+              <li><strong>Impakt IQ ESG Platform</strong> — Flask backend, MS SQL Server, React frontend; complex ESG scoring logic</li>
+              <li><strong>Ciena Global Log Analyzer</strong> — Async FastAPI microservices, BPMN workflow automation via Ciena MDSO</li>
+              <li><strong>Dayforce Tax Automation</strong> — Migrated Salesforce to Azure-native Functions; tax calculation &amp; Excel generation</li>
+              <li><strong>Cisco Meraki SD-WAN</strong> — Python microservice network provisioning, React dashboards, CI/CD pipelines</li>
+            </ul>
+            <div class="tl-stack"><span>Python</span><span>FastAPI</span><span>Flask</span><span>React</span><span>Azure</span><span>MS SQL</span></div>
+          </div>
+        </div>
+
+        <div class="tl-item" data-reveal>
+          <div class="tl-connector"><div class="tl-node"></div></div>
+          <div class="tl-card tilt-card">
+            <div class="tl-header">
+              <div>
+                <span class="tl-period">Oct 2018 — Jan 2022</span>
+                <h3 class="tl-role">Senior Software Engineer</h3>
+                <p class="tl-company">Neubotic Technologies &nbsp;·&nbsp; <em>Capgemini Assignment</em></p>
+              </div>
+              <div class="tl-location">Pune, India</div>
+            </div>
+            <ul class="tl-points">
+              <li>Built REST APIs and backend services using Python, Django/DRF, PostgreSQL for Telecom OSS platforms</li>
+              <li>Implemented concurrency for background processing and real-time integrations</li>
+              <li>Wrote unit tests and supported CI/CD workflows</li>
+            </ul>
+            <div class="tl-stack"><span>Python</span><span>Django</span><span>DRF</span><span>PostgreSQL</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================== ACHIEVEMENTS -->
+  <section id="achievements" class="section section-alt">
+    <div class="container">
+      <div class="section-label">04 / Impact</div>
+      <h2 class="section-heading centered">Key <span class="lime">Wins</span></h2>
+      <div class="ach-grid">
+        <div class="ach-card tilt-card" data-reveal>
+          <div class="ach-number">~80%</div>
+          <div class="ach-title">Upload Time Reduction</div>
+          <div class="ach-desc">Reduced file uploads from 150–250s via async optimization and concurrency improvements</div>
+        </div>
+        <div class="ach-card tilt-card" data-reveal>
+          <div class="ach-number">500MB</div>
+          <div class="ach-title">Max File Engineered</div>
+          <div class="ach-desc">Stable simultaneous uploads of enterprise-scale regulatory documents without timeouts</div>
+        </div>
+        <div class="ach-card tilt-card" data-reveal>
+          <div class="ach-number">500+</div>
+          <div class="ach-title">Records Paginated</div>
+          <div class="ach-desc">Replaced full dataset loads with 5-record lazy pagination, slashing API overhead</div>
+        </div>
+        <div class="ach-card tilt-card" data-reveal>
+          <div class="ach-number">1&thinsp;→&thinsp;N</div>
+          <div class="ach-title">API Decomposition</div>
+          <div class="ach-desc">Broke monolithic endpoints into focused, independently scalable microservices</div>
+        </div>
+        <div class="ach-card tilt-card" data-reveal>
+          <div class="ach-number">asyncpg</div>
+          <div class="ach-title">DB Modernization</div>
+          <div class="ach-desc">Full database layer migration with connection pooling, eliminating concurrency bottlenecks</div>
+        </div>
+        <div class="ach-card tilt-card" data-reveal>
+          <div class="ach-number">Global</div>
+          <div class="ach-title">Scale Impact</div>
+          <div class="ach-desc">Architecture changes shipped to GSK's regulatory compliance platform serving worldwide users</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================== CONTACT -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-label">05 / Contact</div>
+      <div class="contact-inner">
+
+        <div class="contact-left" data-reveal="left">
+          <h2 class="contact-big">Let's<br><span class="lime">Connect.</span></h2>
+          <p class="contact-sub">Available for senior backend &amp; API engineering roles.<br>Let's build something that matters.</p>
+          <div class="contact-cards">
+            <a href="mailto:meyogeshpatil4598@gmail.com" class="contact-card">
+              <div class="cc-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <rect x="2" y="4" width="20" height="16" rx="2"/>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+              </div>
+              <div class="cc-content">
+                <div class="cc-type">Email</div>
+                <div class="cc-value">meyogeshpatil4598@gmail.com</div>
+              </div>
+              <div class="cc-arrow">→</div>
+            </a>
+            <a href="tel:+918625004598" class="contact-card">
+              <div class="cc-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 9.7 19.79 19.79 0 0 1 1.61 1.1 2 2 0 0 1 3.6 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6.08 6.08l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92"/>
+                </svg>
+              </div>
+              <div class="cc-content">
+                <div class="cc-type">Phone</div>
+                <div class="cc-value">+91 86250 04598</div>
+              </div>
+              <div class="cc-arrow">→</div>
+            </a>
+            <a href="https://www.linkedin.com/in/yogesh-patil-a15600293" class="contact-card" target="_blank" rel="noopener">
+              <div class="cc-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                  <rect x="2" y="9" width="4" height="12"/>
+                  <circle cx="4" cy="4" r="2"/>
+                </svg>
+              </div>
+              <div class="cc-content">
+                <div class="cc-type">LinkedIn</div>
+                <div class="cc-value">yogesh-patil-a15600293</div>
+              </div>
+              <div class="cc-arrow">→</div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Animated SVG developer avatar — Cassie Evans inspired -->
+        <div class="contact-right" data-reveal="right">
+          <div class="avatar-wrap">
+            <svg class="avatar-svg" viewBox="0 0 240 285" xmlns="http://www.w3.org/2000/svg">
+              <!-- Organic lime blob background -->
+              <path class="av-blob" d="M44,138 C26,80 62,18 116,14 C172,10 216,56 220,116 C226,178 188,238 132,252 C76,266 26,222 20,168 C14,140 34,152 44,138Z" fill="#C8FF41" fill-opacity="0.18"/>
+
+              <!-- Body / hoodie -->
+              <path d="M46,285 L52,230 Q82,215 120,213 Q158,215 188,230 L194,285Z" fill="#1a1a2e"/>
+              <rect x="96" y="240" width="48" height="26" rx="6" fill="#111120"/>
+
+              <!-- Neck -->
+              <rect x="108" y="200" width="24" height="18" rx="5" fill="#c8835a"/>
+
+              <!-- Head -->
+              <ellipse cx="120" cy="152" rx="53" ry="56" fill="#d4956a"/>
+
+              <!-- Ears -->
+              <ellipse cx="67" cy="156" rx="8" ry="11" fill="#c47850"/>
+              <ellipse cx="173" cy="156" rx="8" ry="11" fill="#c47850"/>
+
+              <!-- Hair — short, dark -->
+              <path d="M67,144 Q70,86 120,82 Q170,86 173,144 Q164,104 120,101 Q76,104 67,144Z" fill="#1c0e06"/>
+              <rect x="67" y="131" width="11" height="30" rx="5" fill="#1c0e06"/>
+              <rect x="162" y="131" width="11" height="28" rx="5" fill="#1c0e06"/>
+
+              <!-- Eyebrows -->
+              <path d="M96,134 Q106,129 115,132" fill="none" stroke="#1c0e06" stroke-width="2.4" stroke-linecap="round"/>
+              <path d="M125,132 Q134,129 144,134" fill="none" stroke="#1c0e06" stroke-width="2.4" stroke-linecap="round"/>
+
+              <!-- Eye whites -->
+              <ellipse cx="103" cy="149" rx="12" ry="12.5" fill="white"/>
+              <ellipse cx="137" cy="149" rx="12" ry="12.5" fill="white"/>
+
+              <!-- Pupils — JS moves these to track cursor -->
+              <ellipse class="av-pupil-l" cx="104" cy="150" rx="6.5" ry="7" fill="#1c0e06"/>
+              <ellipse class="av-pupil-r" cx="138" cy="150" rx="6.5" ry="7" fill="#1c0e06"/>
+
+              <!-- Eye glint -->
+              <circle cx="107" cy="146" r="2" fill="white" opacity="0.9"/>
+              <circle cx="141" cy="146" r="2" fill="white" opacity="0.9"/>
+
+              <!-- Glasses (round) -->
+              <rect x="88" y="139" width="28" height="22" rx="10" fill="none" stroke="#2a2a2a" stroke-width="2.2"/>
+              <rect x="124" y="139" width="28" height="22" rx="10" fill="none" stroke="#2a2a2a" stroke-width="2.2"/>
+              <line x1="116" y1="150" x2="124" y2="150" stroke="#2a2a2a" stroke-width="2.2"/>
+              <line x1="82"  y1="149" x2="88"  y2="149" stroke="#2a2a2a" stroke-width="2"/>
+              <line x1="152" y1="149" x2="158" y2="149" stroke="#2a2a2a" stroke-width="2"/>
+
+              <!-- Blink overlays — JS sets opacity to 1 briefly -->
+              <ellipse class="av-blink-l" cx="103" cy="149" rx="12" ry="12.5" fill="#d4956a" opacity="0"/>
+              <ellipse class="av-blink-r" cx="137" cy="149" rx="12" ry="12.5" fill="#d4956a" opacity="0"/>
+
+              <!-- Nose -->
+              <path d="M116,167 Q120,173 124,167" fill="none" stroke="#b86848" stroke-width="1.8" stroke-linecap="round"/>
+
+              <!-- Smile -->
+              <path d="M108,181 Q120,193 132,181" fill="none" stroke="#b86848" stroke-width="2.8" stroke-linecap="round"/>
+
+              <!-- Blush -->
+              <ellipse cx="87" cy="172" rx="13" ry="8" fill="#e0805a" fill-opacity="0.3"/>
+              <ellipse cx="153" cy="172" rx="13" ry="8" fill="#e0805a" fill-opacity="0.3"/>
+
+              <!-- Floating code chip -->
+              <g class="av-code-float">
+                <rect x="165" y="62" width="56" height="26" rx="5" fill="#C8FF41" fill-opacity="0.10" stroke="#C8FF41" stroke-width="1" stroke-opacity="0.3"/>
+                <text x="173" y="79" font-family="monospace" font-size="11" fill="#C8FF41" fill-opacity="0.65">&lt;dev/&gt;</text>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="nav-logo"><span class="bracket">[</span>YRP<span class="bracket">]</span></span>
+      <p>Yogesh Raju Patil &copy; 2025 &mdash; Senior Software Engineer</p>
+    </div>
+  </footer>
+
+  <!-- GSAP from CDN — enables premium animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
