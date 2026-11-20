@@ -155,8 +155,7 @@ window.addEventListener('scroll', () => {
    ============================================================ */
 const heroTl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 heroTl
-  .from('.hero-badge',       { opacity: 0, y: 18, duration: 0.65 },                       0.25)
-  .from('.hn-1',             { opacity: 0, y: 90, skewY: -4, duration: 1.0 },             0.42)
+  .from('.hn-1',            { opacity: 0, y: 90, skewY: -4, duration: 1.0 },             0.42)
   .from('.hn-2',             { opacity: 0, y: 70, skewY:  3, duration: 0.95 },            0.68)
   .from('.hero-meta',        { opacity: 0, y: 22, duration: 0.7 },                        0.88)
   .from('.hero-actions > *', { opacity: 0, y: 18, duration: 0.6, stagger: 0.14 },         1.0)
@@ -196,6 +195,7 @@ gsap.fromTo('.sr', { opacity: 0, x: -30 }, {
 /* ============================================================
    GSAP COUNTER ANIMATION
    ============================================================ */
+// Final values live in the HTML (for no-JS / crawlers); this resets to 0 and counts up.
 document.querySelectorAll('.counter').forEach(el => {
   const target = parseInt(el.dataset.to, 10);
   gsap.fromTo(el, { innerText: 0 }, {
@@ -248,7 +248,7 @@ document.querySelectorAll('.tilt-card').forEach(card => {
    SECTION PROGRESS DOTS — update active dot as you scroll
    ============================================================ */
 const dotLinks  = document.querySelectorAll('.sdot');
-const sectionIds = ['hero', 'about', 'skills', 'experience', 'achievements', 'contact'];
+const sectionIds = ['hero', 'about', 'skills', 'experience', 'awards', 'achievements', 'contact'];
 
 sectionIds.forEach(id => {
   const el = document.getElementById(id);
@@ -269,18 +269,25 @@ sectionIds.forEach(id => {
 /* ============================================================
    TYPING ANIMATION
    ============================================================ */
-const words  = ['API Engineer','API Designer','Python Expert','FastAPI Developer','Systems Engineer','Async Specialist'];
-let wIdx = 0, cIdx = 0, deleting = false;
+// The first word is already rendered in the HTML (visible without JS);
+// the animation starts by deleting it, then cycles through the list.
+const words  = ['Backend + GenAI Engineer','Python Backend Engineer','GenAI Engineer','FastAPI Developer','Multi-Agent Systems Engineer','API Engineer'];
 const typeEl = document.getElementById('typeTarget');
+let wIdx = 0, cIdx = words[0].length, deleting = true;
 
 function type() {
   const word = words[wIdx];
-  typeEl.textContent = deleting ? word.slice(0, --cIdx) : word.slice(0, ++cIdx);
-  if (!deleting && cIdx === word.length)  setTimeout(() => { deleting = true; }, 1900);
-  else if (deleting && cIdx === 0) { deleting = false; wIdx = (wIdx + 1) % words.length; }
-  setTimeout(type, deleting ? 50 : 85);
+  if (deleting) {
+    typeEl.textContent = word.slice(0, --cIdx);
+    if (cIdx === 0) { deleting = false; wIdx = (wIdx + 1) % words.length; }
+    setTimeout(type, 50);
+  } else {
+    typeEl.textContent = word.slice(0, ++cIdx);
+    if (cIdx === word.length) { deleting = true; setTimeout(type, 1900); }
+    else setTimeout(type, 85);
+  }
 }
-setTimeout(type, 1800); // delay until after GSAP entrance
+if (typeEl) setTimeout(type, 3800); // hold the full title through the GSAP entrance
 
 /* ============================================================
    NAVBAR SCROLL

@@ -379,7 +379,7 @@ body.link-hover .cursor-ring { width: 52px; height: 52px; border-color: rgba(200
   font-size: clamp(2.4rem,5vw,3.4rem); font-weight: 900;
   color: var(--lime); line-height: 1; margin-bottom: 8px; letter-spacing: -0.025em;
 }
-.stat-sfx { font-size: 0.56em; font-weight: 700; }
+.stat-sfx, .stat-pfx { font-size: 0.56em; font-weight: 700; }
 .stat-label {
   font-family: var(--mono); font-size: 11.5px;
   color: var(--muted); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
@@ -428,17 +428,22 @@ body.link-hover .cursor-ring { width: 52px; height: 52px; border-color: rgba(200
    ============================================================ */
 .skills-list { border-top: 1px solid var(--border); }
 
+/* Main and alt layers share one grid cell, so the row is always tall enough
+   for whichever is taller (long reveal lists wrap instead of being clipped);
+   the category sits in its own column on the right. */
 .sr {
   border-bottom: 1px solid var(--border);
   position: relative; overflow: hidden; cursor: default;
+  display: grid; grid-template-columns: minmax(0,1fr) auto; column-gap: 22px;
 }
 .sr-main, .sr-alt {
+  grid-area: 1 / 1;
   display: flex; align-items: center; gap: 22px; padding: 18px 0;
   transition: transform 0.54s cubic-bezier(0.76,0,0.24,1);
 }
-.sr-alt { position: absolute; top: 100%; left: 0; right: 0; }
+.sr-alt { transform: translateY(100%); }
 .sr:hover .sr-main { transform: translateY(-100%); }
-.sr:hover .sr-alt   { transform: translateY(-100%); }
+.sr:hover .sr-alt   { transform: translateY(0); }
 
 .sr-idx {
   font-family: var(--mono); font-size: 12px;
@@ -446,14 +451,19 @@ body.link-hover .cursor-ring { width: 52px; height: 52px; border-color: rgba(200
   transition: color 0.3s;
 }
 .sr:hover .sr-alt .sr-idx { color: rgba(200,255,65,0.42); }
-.sr-name, .sr-reveal {
+.sr-name {
   font-size: clamp(2.1rem, 5.4vw, 4.8rem);
   font-weight: 800; line-height: 1; letter-spacing: -0.03em;
+  color: var(--white);
 }
-.sr-name   { color: var(--white); }
-.sr-reveal { color: var(--lime); }
+.sr-reveal {
+  font-size: clamp(1rem, 1.9vw, 1.6rem);
+  font-weight: 700; line-height: 1.32; letter-spacing: -0.01em;
+  color: var(--lime);
+}
 .sr-cat {
-  margin-left: auto; font-family: var(--mono); font-size: 11.5px;
+  grid-column: 2; grid-row: 1; align-self: center;
+  font-family: var(--mono); font-size: 11.5px;
   color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em;
   flex-shrink: 0; transition: color 0.3s;
 }
@@ -508,6 +518,9 @@ body.link-hover .cursor-ring { width: 52px; height: 52px; border-color: rgba(200
   color: var(--lime); background: var(--lime-lo);
   border: 1px solid var(--lime-mid); padding: 3px 10px; border-radius: 2px; margin-bottom: 16px;
 }
+.tl-intro { font-size: 14.5px; color: rgba(var(--text-rgb),0.78); line-height: 1.7; margin-bottom: 18px; }
+.tl-sub { margin-bottom: 6px; }
+.tl-sub + .tl-sub { padding-top: 14px; border-top: 1px solid var(--border); }
 .tl-points { list-style: none; margin-bottom: 20px; }
 .tl-points li {
   position: relative; padding-left: 18px; margin-bottom: 9px;
@@ -544,6 +557,14 @@ body.link-hover .cursor-ring { width: 52px; height: 52px; border-color: rgba(200
 }
 .ach-title { font-size: 14.5px; font-weight: 700; color: var(--white); margin-bottom: 7px; }
 .ach-desc  { font-size: 13px; color: var(--muted); line-height: 1.62; }
+
+/* ============================================================
+   AWARDS — reuses the achievement card style
+   ============================================================ */
+.awards-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; }
+.award-title { font-size: 1.15rem; margin: 6px 0 4px; }
+.award-card .tl-company { margin-bottom: 10px; }
+.award-card .ach-desc { font-size: 14px; color: rgba(var(--text-rgb),0.68); }
 
 /* ============================================================
    CONTACT
@@ -727,6 +748,7 @@ body.link-hover .cursor-ring { width: 52px; height: 52px; border-color: rgba(200
   .about-grid    { grid-template-columns: 1fr; gap: 44px; }
   .ach-grid      { grid-template-columns: 1fr 1fr; }
   .sr-cat        { display: none; }
+  .sr            { grid-template-columns: minmax(0,1fr); }
   .section-dots  { display: none; }
   .contact-inner { grid-template-columns: 1fr; }
   .contact-right { display: none; }
@@ -754,6 +776,7 @@ body.link-hover .cursor-ring { width: 52px; height: 52px; border-color: rgba(200
 }
 @media (max-width: 560px) {
   .ach-grid    { grid-template-columns: 1fr; }
+  .awards-grid { grid-template-columns: 1fr; }
   .stats-inner { flex-direction: column; gap: 36px; }
   .stat-sep    { display: none; }
   .cursor, .cursor-ring { display: none; }
